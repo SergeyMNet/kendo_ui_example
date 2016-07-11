@@ -1,0 +1,10 @@
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\Model.dll.config
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\Model.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\Model.pdb
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\obj\Debug\Model.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\Model\obj\Debug\Model.pdb

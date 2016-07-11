@@ -1,0 +1,10 @@
+﻿@model object
+
+@(Html.Kendo().DropDownList()
+         .Name("Status")
+         .DataTextField("StatusName")
+         .DataValueField("StatusID")
+         .DataSource(source =>
+     {
+         source.Read(read => read.Action("GetAllStatusVM", "Test"));
+     }))

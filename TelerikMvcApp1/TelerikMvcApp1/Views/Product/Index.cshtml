@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .k-image{
+        width: 25px;
+        height: auto;
+    }
+</style>
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Tree View</h4>
+        <div id="treeview"></div>
+        <div id="tvformat" hidden="hidden">@ViewData["treeviews"]</div>    
+    </div>
+    <div class="col-md-4">
+      @ViewData["treeviews"]  
+    </div>
+    @Url.Content("~/Images/DataImages/2.jpg")
+    
+</div>
+<br />
+    
+<script>
+        var tvstring = $('#tvformat').text();
+        var tvds = eval(tvstring);
+
+        var tv = $('#treeview').kendoTreeView({
+            dragAndDrop: true,
+            dataSource: tvds,
+            drop: onDrop
+        }).data("kendoTreeView");
+
+        function onDrop(e) {            
+            var childid = e.sourceNode.innerText;
+            var parentid = e.destinationNode.innerText;
+
+            $.ajax({
+                type: 'POST',
+                url: "/Product/SaveNode",
+                data: { 'childid': childid, 'parentid': parentid },
+                dataType: 'json'
+            });
+        }
+
+        function GetData() {
+            return tvds;
+        }
+
+    </script>

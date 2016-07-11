@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Test_Html";    
+}
+
+@section Style {
+ <link href="~/Content/TestKendoPage_Style.css" rel="stylesheet" />    
+}
+
+<div id="messageData" class="messageData"><div id="messageIn" class="pull-left" style="padding: 20px;"></div> <span id="closeBut" onclick="closeButton()" class="glyphicon glyphicon-remove pull-right" style="padding: 5px;"></span></div>
+
+<div class="row">    
+    <div class="col-xs-12">
+        @(Html.Kendo().ToolBar()
+           .Name("kToolBar")
+           .Resizable(false)
+           .Items(items =>
+           {
+               items.Add().Template("<label>Date:</label><input id='kDateFilter' />");
+               items.Add().Type(CommandType.Separator);
+               items.Add().Template("<label>Status:</label><input id='kDropDownStatusFilter' />");
+               items.Add().Type(CommandType.Separator);
+               items.Add().Template("<label>Name:</label><input id='kStringNameFilter' />");               
+           })           
+         )
+            <div class="bg-success">@ViewBag.ResultMessage</div>
+    </div>
+
+    <div class="col-md-3">
+        <h4 class="text-center" id="TreeHead">Category Tree</h4>
+        <p></p>
+        <br />            
+                @(Html.Kendo().TreeView()
+                 .Name("kNewTree")
+                 .DataSource(source =>
+                 {
+                     source.Read(read => read.Action("GetTreeView", "Test"))                         
+                         .Model(m => m.Children("items").Id("id"));
+                 })                 
+                 .DataTextField("text")                 
+                 .DragAndDrop(true)
+                 .Events(e => e
+                     .Select("OnTreeSelect")
+                     .Drop("OnTreeDrop")
+                     )
+                )
+                <hr />
+                @(Html.Kendo().Button()
+                 .Name("kAddCategory")
+                 .Content("AddCategory")
+                 .Events(e => e.Click("addNewFolder"))
+                )        
+
+        <ul id="kMenu">
+            <li>
+              Edit
+            </li>
+            <li>
+                Add next
+            </li>
+            <li>
+                Add child
+            </li>
+            <li>
+                Add document
+            </li>
+            <li>
+                Delete
+            </li>
+        </ul>
+
+        <ul id="kMenu2">            
+            <li>
+                Add new folder
+            </li>            
+        </ul>
+
+    </div>
+        
+    <div class="col-md-9">
+        <h4 class="text-center" >Documents Grid</h4>        
+        <hr />
+        @(Html.Kendo().Grid<TelerikMvcApp2.Models.DocumentView>()
+                  .Name("kNewGrid")
+                  .Pageable(page =>
+                      page
+                      .PageSizes(true)
+                      .Refresh(true)
+                      .PreviousNext(true))                      
+                  .Columns(col => {
+                      col.Bound(e => e.Id).Title("ID").Width(100);                      
+                      col.Bound(e => e.Category).Title("Category#").Width(100).ClientTemplate("#: Category.CategoryName #").Sortable(false);
+                      col.Bound(e => e.Name).Title("Name").ClientTemplate("#if (IsHasFile) {# <a class=\"greenColor\" href=\"GetFile?docName=#:Name#\" download>#:Name#</a> #} # #if (!IsHasFile) {# <p>#:Name#</p> #} #"); ;
+                      col.Bound(e => e.Extension).Title("Doc").ClientTemplate("#if (IsHasFile) {# <a href=\"GetFile?docName=#:Name#\" download>#:Extension#</a> #} #");
+                      col.Bound(e => e.Status).Title("Status");                      
+                      col.Bound(e => e.Upload_date).Title("Update").Format("{0:dd.MM.yyyy HH:mm}").Width(250);
+                      col.Command(com => { com.Edit(); com.Destroy(); com.Custom("UploadFile").Text("Upload").Click("UplFile"); }).Width(300);                      
+                  })                  
+                  .Editable(e => e.Mode(GridEditMode.InLine))
+                  .Sortable()
+                  .AutoBind(false)                  
+                  .DataSource(source =>
+                  {
+                      source.Ajax()
+                          .PageSize(10)
+                          .Events(ev => ev
+                              .Error("error_handler")
+                              .RequestEnd("gridEndReqest"))
+                          .Model(m => {
+                              m.Id(mod => mod.Id);
+                              m.Field(mod => mod.Id).Editable(false);
+                              m.Field(mod => mod.Upload_date).Editable(false);
+                              m.Field(mod => mod.Name).DefaultValue("Doc_");
+                              m.Field(mod => mod.Extension).Editable(false);
+                              m.Field(mod => mod.Category);
+                              m.Field(mod => mod.Status).Editable(true);                              
+                          })                          
+                          .Read(r => r.Action("GetGrid", "Test").Data("AddDataTreeFilter"))
+                          .Create(up => up.Action("Create_Doc", "Test"))
+                          .Update(up => up.Action("Update_Doc", "Test"))
+                          .Destroy(up => up.Action("Delete_Doc", "Test"));                      
+                  })
+                  )
+
+        <div id="window">
+            <div id="uploadContent"></div>
+        </div>
+
+    </div>
+</div>
+<br />
+
+@section Scripts{
+ @Scripts.Render("~/Kendo_page_test/scripts") 
+}

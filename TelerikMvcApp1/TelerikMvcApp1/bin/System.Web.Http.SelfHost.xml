@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Web.Http.SelfHost</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Http.HttpRequestMessageExtensions">
+      <summary>Предоставляет методы расширения для <see cref="T:System.Net.Http.HttpRequestMessage" />.</summary>
+    </member>
+    <member name="M:System.Net.Http.HttpRequestMessageExtensions.GetSecurityMessageProperty(System.Net.Http.HttpRequestMessage)">
+      <summary>Получает текущее <see cref="T:System.ServiceModel.Security.SecurityMessageProperty" />, которое хранится в свойствах сообщения указанного запроса.</summary>
+      <returns>Текущий <see cref="T:System.ServiceModel.Security.SecurityMessageProperty" />.</returns>
+      <param name="request">Запрос.</param>
+    </member>
+    <member name="T:System.Web.Http.SelfHost.HttpSelfHostConfiguration">
+      <summary>Содержит класс конфигурации для служб HTTP.</summary>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostConfiguration.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.HttpSelfHostConfiguration" />.</summary>
+      <param name="baseAddress">Базовый адрес в виде строки.</param>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostConfiguration.#ctor(System.Uri)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.HttpSelfHostConfiguration" />.</summary>
+      <param name="baseAddress">Базовый адрес в виде URI.</param>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.BaseAddress">
+      <summary>Получает базовый адрес HTTP.</summary>
+      <returns>Объект <see cref="T:System.Uri" />, который представляет базовый адрес HTTP.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.ClientCredentialType">
+      <summary>Получает или задает тип клиентских учетных данных, которые ожидает сервер.</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.HttpClientCredentialType" />, определяющее тип учетных данных.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.HostNameComparisonMode">
+      <summary>Получает значение, указывающее, как имя узла должно использоваться при сравнении URI для распределения входящих сообщений. </summary>
+      <returns>Одно из значений перечисления <see cref="T:System.ServiceModel.HostNameComparisonMode" />.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.MaxBufferSize">
+      <summary>Получает или задает максимальный размер буфера.</summary>
+      <returns>Максимальный размер буфера.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.MaxConcurrentRequests">
+      <summary>Получает или задает максимальное количество экземпляров <see cref="T:System.Net.Http.HttpRequestMessage" />, которые могут одновременно обрабатываться в любой момент времени. Значение по умолчанию — число ядер ЦП, умноженное на 100.</summary>
+      <returns>Верхний предел числа экземпляров <see cref="T:System.Net.Http.HttpRequestMessage" />, которые могут одновременно обрабатываться в любой момент времени.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.MaxReceivedMessageSize">
+      <summary>Получает или задает максимальный размер принимаемых сообщений.</summary>
+      <returns>Максимальный размер принимаемого сообщения.</returns>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostConfiguration.OnConfigureBinding(System.Web.Http.SelfHost.Channels.HttpBinding)">
+      <summary>Вызывается для применения конфигурации на уровне конечной точки.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" /> для использования при создании <see cref="T:System.ServiceModel.Channels.IChannelListener" />, или значение null, если нет параметров привязки.</returns>
+      <param name="httpBinding">Конечная точка HTTP.</param>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.ReceiveTimeout">
+      <summary>Получает или задает время ожидания получения.</summary>
+      <returns>Время ожидания получения.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.SendTimeout">
+      <summary>Получает или задает время ожидания отправки.</summary>
+      <returns>Время ожидания отправки.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.TransferMode">
+      <summary>Возвращает или задает режим передачи.</summary>
+      <returns>Одно из значений перечисления <see cref="T:System.ServiceModel.TransferMode" />.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.UserNamePasswordValidator">
+      <summary>Получает или задает <see cref="T:System.IdentityModel.Selectors.UserNamePasswordValidator" />, который используется для проверки имени пользователя и пароля, передаваемых через HTTP или HTTPS.</summary>
+      <returns>
+        <see cref="T:System.IdentityModel.Selectors.UserNamePasswordValidator" />, который используется для проверки имени пользователя и пароля, передаваемых через HTTP или HTTPS.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.HttpSelfHostConfiguration.X509CertificateValidator">
+      <summary>Получает или задает экземпляр <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />, который будет использоваться для проверки сертификата клиента, переданного через HTTPS.</summary>
+      <returns>Экземпляр <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />, который будет использоваться для проверки сертификата клиента.</returns>
+    </member>
+    <member name="T:System.Web.Http.SelfHost.HttpSelfHostServer">
+      <summary> Реализация <see cref="T:System.Web.Http.HttpServer" />, прослушивающая непосредственно HTTP. </summary>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostServer.#ctor(System.Web.Http.SelfHost.HttpSelfHostConfiguration)">
+      <summary> Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.HttpSelfHostServer" />. </summary>
+      <param name="configuration">Конфигурация.</param>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostServer.#ctor(System.Web.Http.SelfHost.HttpSelfHostConfiguration,System.Net.Http.HttpMessageHandler)">
+      <summary> Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.HttpSelfHostServer" />. </summary>
+      <param name="configuration">Конфигурация.</param>
+      <param name="dispatcher">Диспетчер.</param>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostServer.CloseAsync">
+      <summary> Закрывает текущий экземпляр <see cref="T:System.Web.Http.HttpServer" />. </summary>
+      <returns>
+        <see cref="T:System.Threading.Tasks.Task" />, представляющая асинхронную операцию закрытия <see cref="T:System.Web.Http.HttpServer" />.</returns>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.HttpSelfHostServer.OpenAsync">
+      <summary> Открывает текущий экземпляр <see cref="T:System.Web.Http.HttpServer" />. </summary>
+      <returns>
+        <see cref="T:System.Threading.Tasks.Task" />, представляющая асинхронную операцию открытия <see cref="T:System.Web.Http.HttpServer" />. Как только эта задача будет успешно завершена, сервер будет работать.</returns>
+    </member>
+    <member name="T:System.Web.Http.SelfHost.Channels.HttpBinding">
+      <summary> Привязка, используемая с конечными точками веб-служб, использующими сообщения запросов и ответов HTTP со строгой типизацией. </summary>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.Channels.HttpBinding.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />.</summary>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.Channels.HttpBinding.#ctor(System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" /> с указанным режимом безопасности.</summary>
+      <param name="securityMode">Значение <see cref="T:System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode" />, задающее тип безопасности, используемый для настройки конечной точки службы с помощью привязки <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />.</param>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.ConfigureTransportBindingElement">
+      <summary> Получает или задает делегат, который настраивает <see cref="T:System.ServiceModel.Channels.HttpTransportBindingElement" />, создаваемый этой привязкой. </summary>
+      <returns>Делегат для настройки <see cref="T:System.ServiceModel.Channels.HttpTransportBindingElement" />.</returns>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.Channels.HttpBinding.CreateBindingElements">
+      <summary>Создает коллекцию, содержащую элементы текущей привязки.</summary>
+      <returns>Коллекция, содержащая элементы из текущего объекта привязки в правильном порядке.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.EnvelopeVersion">
+      <summary>Возвращает версию SOAP, которая используется для сообщений, обрабатываемых этой привязкой. </summary>
+      <returns>Значение <see cref="T:System.ServiceModel.EnvelopeVersion" />, которое используется с этой привязкой. Значение всегда равно <see cref="F:System.ServiceModel.EnvelopeVersion.None" />.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.HostNameComparisonMode">
+      <summary>Возвращает или задает значение, указывающее, используется ли при сопоставлении URI для поиска службы имя узла.</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.HostnameComparisonMode" />. </returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.MaxBufferPoolSize">
+      <summary>Возвращает или задает максимальный объем памяти, выделяемый для диспетчера буферов, необходимых конечным точкам, которые используют эту привязку.</summary>
+      <returns>Возвращает максимальный размер (в байтах) буферного пула, который используется конечными точками с этой привязкой.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.MaxBufferSize">
+      <summary>Возвращает или задает максимальный объем памяти, выделяемый для диспетчера буферов сообщений, получающих сообщения из канала.</summary>
+      <returns>Максимальный размер буфера.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.MaxReceivedMessageSize">
+      <summary>Возвращает или задает максимальный размер сообщения, обрабатываемого привязкой.</summary>
+      <returns>Максимальный размер в байтах для сообщений, обрабатываемых этой привязкой.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.Scheme">
+      <summary>Возвращает схему транспорта URI для каналов и прослушивателей, у которых настроена эта привязка.</summary>
+      <returns>Схема транспорта.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.Security">
+      <summary>Возвращает или задает параметры безопасности для этой привязки.</summary>
+      <returns>Параметры безопасности.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.System#ServiceModel#Channels#IBindingRuntimePreferences#ReceiveSynchronously">
+      <summary>Получает значение, указывающее, обрабатываются входящие запросы синхронно или асинхронно.</summary>
+      <returns>Значение true, если запросы обрабатываются синхронно. В противном случае — значениеfalse.</returns>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBinding.TransferMode">
+      <summary>Получает или задает значение, которое указывает, будут ли сообщения отправляться в буфере или в потоковом режиме.</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.TransferMode" />, указывающее, будут ли сообщения отправляться в буфере или в потоковом режиме.</returns>
+    </member>
+    <member name="T:System.Web.Http.SelfHost.Channels.HttpBindingSecurity">
+      <summary> Задает типы безопасности, доступные для конечной точки службы, где настроено использование привязки <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />. </summary>
+    </member>
+    <member name="M:System.Web.Http.SelfHost.Channels.HttpBindingSecurity.#ctor">
+      <summary> Создает новый экземпляр класса <see cref="T:System.Web.Http.SelfHost.Channels.HttpBindingSecurity" />. </summary>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBindingSecurity.Mode">
+      <summary> Возвращает или устанавливает режим безопасности, используемый конечной точкой, для которой настроена привязка используется в <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />. </summary>
+    </member>
+    <member name="P:System.Web.Http.SelfHost.Channels.HttpBindingSecurity.Transport">
+      <summary> Возвращает или задает объект, который содержит параметры безопасности транспортного уровня для привязки <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />. </summary>
+    </member>
+    <member name="T:System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode">
+      <summary> Определяет режимы безопасности, которые можно использовать для настройки конечной точки службы, использующей <see cref="T:System.Web.Http.SelfHost.Channels.HttpBinding" />. </summary>
+    </member>
+    <member name="F:System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode.None">
+      <summary> Указывает, что HTTP-запросы не защищаются. </summary>
+    </member>
+    <member name="F:System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode.Transport">
+      <summary> Означает, что для HTTP-запросов используется транспортный уровень безопасности. </summary>
+    </member>
+    <member name="F:System.Web.Http.SelfHost.Channels.HttpBindingSecurityMode.TransportCredentialOnly">
+      <summary> Указывает, что предоставляется только проверка подлинности клиента на основе HTTP. </summary>
+    </member>
+  </members>
+</doc>

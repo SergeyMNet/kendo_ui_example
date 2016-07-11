@@ -1,0 +1,56 @@
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.dll.config
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.pdb
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Optimization.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Razor.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Razor.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1.pdb
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Optimization.xml
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Razor.xml
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Razor.xml
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.xml
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.dll
+c:\users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.pdb
+C:\Users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\EntityFramework.dll
+C:\Users\user\documents\visual studio 2013\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.dll.config
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.pdb
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1.pdb
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.pdb
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\DAL.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\DAL.pdb
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Http.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\Ninject.Web.Common.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\Ninject.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Http.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\Ninject.Web.Common.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\Ninject.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\ru\System.Web.Http.resources.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\user\Documents\kando_test\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\WebActivatorEx.dll

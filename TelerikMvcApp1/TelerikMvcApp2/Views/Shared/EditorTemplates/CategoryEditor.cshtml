@@ -1,0 +1,11 @@
+﻿@model object
+
+
+@(Html.Kendo().DropDownList()
+     .Name("Category")
+     .DataTextField("CategoryName")
+     .DataValueField("CategoryID")
+     .DataSource(source =>
+     {
+         source.Read(read => read.Action("GetAllCategoriesVM", "Test"));
+     }))

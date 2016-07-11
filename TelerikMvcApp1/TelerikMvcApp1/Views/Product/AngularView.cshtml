@@ -1,0 +1,267 @@
+﻿<style>
+    .k-treeview .k-in {
+        padding: 5px;
+    }
+
+    .k-image {
+        width: 25px;
+        height: auto;
+    }
+
+    .messageData{
+        position: fixed;
+        right: 10%;
+        top: 20%;
+        padding: 10px;
+        background: #ffe;
+        border: 1px solid #333;
+        z-index: 100500;
+    }
+
+</style>
+
+
+<div>
+    <h3 class="text-center">Kendo + Angular + Bootstrap</h3>    
+</div>
+<hr />
+
+<div id="example" ng-app="KendoDemos">
+            <div class="demo-section k-content row" ng-controller="MyCtrl">                
+                
+                <timer ng-show="messageResult" >
+                    <div class="bg-info messageData" ng-show="seconds < 5">{{messageResult}}</div>
+                </timer>
+                
+                <div class="col-md-4 pull-left">
+                    <div class="box-col">
+                        <h4>TreeView</h4>
+                        <div kendo-tree-view="tree"
+                             k-data-source="treeData"
+                             k-options="treeOptions"
+                             k-on-change="selectedItem = dataItem">
+                            <span k-template>
+                                {{dataItem.text}}
+                            </span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="box-col btn-group" ng-show="selectedItem">
+                        <h4>Selected: {{selectedItem.text}}</h4>
+                        <button class="k-button btn btn-group" ng-click="addAfter(selectedItem)">Add item below</button>
+                        <button class="k-button btn btn-group" ng-click="addBelow(selectedItem)">Add child item</button>
+                        <button class="k-button btn btn-group" ng-click="remove(selectedItem)">Delete</button>
+                    </div>
+                </div>
+                <div class="col-md-8 pull-right">                    
+                    <div ng-show="selectedItem" kendo-grid k-options="detailGridOptions(selectedItem.id)"></div>
+
+                    <hr />
+
+                    <kendo-grid options="mainGridOptions"></kendo-grid>
+</div>
+
+                <hr />     
+                <hr />     
+                <hr />     
+                
+            </div>
+            
+        </div>
+
+<div id="tvformat" hidden="hidden">@ViewData["treeviews"]</div>
+    
+
+@*<div hidden>
+    @(Html.Kendo().Grid<TelerikMvcApp1.Models.Document>()
+                                    .Name("grid")
+                                    .Columns(columns =>
+                                    {
+                                        columns.Bound(c => c.Id);
+                                        columns.Bound(c => c.Name);
+                                        columns.Bound(c => c.Description);
+                                        columns.Bound(c => c.Upload_date);
+                                    })
+                                    .HtmlAttributes(new { style = "height: 550px;" })
+                                    .Scrollable()
+                                    .Sortable()
+                                    .Pageable(pageable => pageable
+                                        .Refresh(true)
+                                        .PageSizes(true)
+                                        .ButtonCount(5))
+                                    .DataSource(dataSource => dataSource
+                                        .Ajax().Read(read => read.Action("GetAllDocumets", "Product").Data("FiltrData"))
+                                        .PageSize(20))
+
+    )
+</div>*@
+
+
+
+<script>
+    
+    function FiltrData() {
+        return {
+            CategoryId: 11
+        }
+
+    }
+
+        var tvstring = $('#tvformat').text();
+        var tvds = eval(tvstring);
+
+        angular.module("KendoDemos", ["kendo.directives", 'timer'])
+
+          .controller("MyCtrl", function ($scope) {
+              $scope.treeData = new kendo
+                  .data
+                  .HierarchicalDataSource({
+                      data: tvds
+                  });
+
+              $scope.treeOptions = {
+                  dragAndDrop: true,
+                  drop: onDrop
+              };
+
+              //---Drop
+              function onDrop(e) {
+                  var childid = e.sourceNode.innerText;
+                  var parentid = e.destinationNode.innerText;
+
+                  $.ajax({
+                      type: 'POST',
+                      url: "/Product/SaveNode",
+                      data: { 'childid': childid, 'parentid': parentid },
+                      dataType: 'json'
+                  });
+              }
+
+              //--create new
+              function makeItem() {
+                  var txt = kendo.toString(new Date(), "HH:mm:ss");
+                  return { text: "new_item " + txt };
+              };
+
+              $scope.addAfter = function (item) {
+                  var array = item.parent();
+                  var index = array.indexOf(item);
+                  var newItem = makeItem();
+                  array.splice(index + 1, 0, newItem);
+
+                  $.ajax({
+                      type: 'POST',
+                      url: "/Product/AddNewAfterCategory",
+                      data: { 'NewItem': newItem.text, 'CategoryAfterId': item.id },
+                      dataType: 'json'
+                  })
+                  .done(function (data) {
+                      if (!$scope.$$phase) $scope.$apply(function () {
+                          $scope.messageResult = data;
+                          $scope.$broadcast('timer-start');
+                      });
+                  })
+
+              };
+              $scope.addBelow = function (item) {
+                  var newItem = makeItem();
+                  $scope.tree.append(newItem, $scope.tree.select());
+
+                  $.ajax({
+                      type: 'POST',
+                      url: "/Product/AddNewChildCategory",
+                      data: { 'NewItem': newItem.text, 'Parentid': item.id },
+                      dataType: 'json'
+                  })
+                    .done(function (data) {
+                        if (!$scope.$$phase) $scope.$apply(function () {
+                            $scope.messageResult = data;
+                            $scope.$broadcast('timer-start');
+                        });
+                    });
+              };
+
+              $scope.remove = function (item) {
+                  var array = item.parent();
+                  var index = array.indexOf(item);
+                  array.splice(index, 1);
+              };
+
+              $scope.mygrid = 
+                          [
+                          { name: "Tea", category: "Beverages" },
+                          { name: "Coffee", category: "Beverages" },
+                          { name: "Ham", category: "Food" }
+                          ];
+                  
+
+              //$scope.mygrid = new kendo.data.DataSource({
+              //    transport: {
+              //        read: {
+              //            url: "http://localhost:24237/Product/GetAllDocumets",
+              //            dataType: "jsonp"
+              //        }
+              //    }
+              //});
+              
+              var dataSource = new kendo.data.DataSource({
+                  data: [
+                    { name: "Jane Doe", age: 30 },
+                    { name: "John Doe", age: 33 }
+                  ],
+                  pageSize: 1
+              });
+              console.log(dataSource.totalPages());   // displays "2"
+
+              $scope.mainGridOptions = {
+                  dataSource: $scope.mygrid,
+                      //[
+                      //    { name: "Tea", category: "Beverages" },
+                      //    { name: "Coffee", category: "Beverages" },
+                      //    { name: "Ham", category: "Food" }
+                      //],
+                  
+                  sortable: true,
+                  pageable: true,
+
+                  //dataBound: function () {
+                  //    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                  //},
+                  //columns: [{
+                  //    field: "FirstName",
+                  //    title: "First Name",
+                  //    width: "120px"
+                  //}, {
+                  //    field: "LastName",
+                  //    title: "Last Name",
+                  //    width: "120px"
+                  //}, {
+                  //    field: "Country",
+                  //    width: "120px"
+                  //}, {
+                  //    field: "City",
+                  //    width: "120px"
+                  //}, {
+                  //    field: "Title"
+                  //}]
+              };
+
+              
+
+              $scope.detailGridOptions = function (dataItem) {
+
+                  $.ajax({
+                      type: 'GET',
+                      url: "/Product/GetAllDocumets?CategoryId=" + dataItem
+                  })
+                  .done(function (data) {
+
+                      if (!$scope.$$phase) $scope.$apply(function () {
+                          $scope.mygrid = data;
+                      });
+                      
+                  })};
+
+
+              });
+    </script>
